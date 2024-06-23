@@ -1,8 +1,6 @@
 import api from "../../utils/api"
 import Actions from "../ActionTypes"
 
-
-
 //thunk actions
 export const getPopular = () => (dispatch) => {
     dispatch({ type: Actions.MOVIES_LOADING })

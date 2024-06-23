@@ -4,6 +4,7 @@ import { getGenres, getPopular } from "../redux/actions"
 import Hero from "../components/Hero"
 import Loader from "../components/Loader"
 import MovieList from "../components/MovieList"
+import Error from "../components/Error"
 
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
       <Hero />
       <hr />
       {
-        isLoading ? <Loader /> : error ? <Error /> : (
+        isLoading ? <Loader /> : error ? <Error err={error} /> : (
           genres.map((genre) => <MovieList key={genre.id} genre={genre} />)
         )
       }

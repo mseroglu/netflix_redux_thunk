@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useSelector } from "react-redux"
 import Loader from "./Loader"
 import { baseImgURL, baseImgURL_w500 } from "../utils/constants"
+import Error from "./Error"
 
 const Hero = () => {
     const { isLoading, error, movies } = useSelector((store) => store.movieReducer)
@@ -26,7 +27,7 @@ const Hero = () => {
                             <span className="text-yellow-400 font-semibold text-lg ">{movie.vote_average.toFixed(1)}</span>
                         </p>
                         <div className="flex gap-3">
-                            <button className="text-lg bg-blue-500 text-white rounded-md p-3 hover:bg-blue-600">Filmi İzle</button>
+                            <Link to={`/movie/${movie.id}`} className="text-lg bg-blue-500 text-white rounded-md p-3 hover:bg-blue-600" >Filmi İzle </Link>
                             <button className="text-lg bg-red-500 text-white rounded-md p-3  hover:bg-red-600">Listeye Ekle</button>
                         </div>
                     </aside>

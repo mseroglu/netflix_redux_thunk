@@ -1,9 +1,11 @@
 
 
 const Detail = () => {
+
+  
   return (
     <div>
-      Detail
+      Detail Page
     </div>
   )
 }
