@@ -9,7 +9,7 @@ import Error from "../components/Error"
 
 const Home = () => {
   const { isLoading, error, genres } = useSelector((store) => store.genreReducer)
-  console.log("state", genres)
+  console.log("genres", genres)
   const dispatch = useDispatch()
 
   useEffect(() => {

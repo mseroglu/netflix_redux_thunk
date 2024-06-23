@@ -3,6 +3,7 @@ import api from "../utils/api"
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { baseImgURL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import '@splidejs/react-splide/css';
 
 const MovieList = ({ genre }) => {
     const [movies, setMovies] = useState([])

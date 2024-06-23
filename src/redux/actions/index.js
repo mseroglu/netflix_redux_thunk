@@ -14,11 +14,8 @@ export const getPopular = () => (dispatch) => {
 export const getGenres = () => (dispatch) => {
     dispatch({ type: Actions.GENRES_LOADING })
 
-    api.get("/genre/movie/list")
-        .then((res) => dispatch({
-            type: Actions.GENRES_SUCCESS, payload: res.data.genres
-        }))
-        .catch((err) => dispatch({
-            type: Actions.GENRES_ERROR, payload: err.message
-        }))
+    api
+        .get("/genre/movie/list")
+        .then((res) => dispatch({ type: Actions.GENRES_SUCCESS, payload: res.data.genres }))
+        .catch((err) => dispatch({ type: Actions.GENRES_ERROR, payload: err.message }))
 }
