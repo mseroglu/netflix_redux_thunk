@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner {
+    filter: drop-shadow(0 0 80px rgba(255, 255, 255, .5));
+}
