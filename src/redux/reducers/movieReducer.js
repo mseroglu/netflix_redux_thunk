@@ -8,7 +8,7 @@ const initialState = {
 }
 
 const movieReducer = (state = initialState, { type, payload }) => {
-    /* console.log("movieReducer => ", type, payload) */
+    //console.log("movieReducer ", type, payload)
     switch (type) {
         case Actions.MOVIES_LOADING:
             return { ...state, isLoading: true };

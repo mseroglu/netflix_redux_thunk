@@ -1,17 +1,17 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector } from "react-redux"
 import Loader from "./Loader"
-import { baseImgURL, baseImgURL_w500 } from "../utils/constants"
+import { baseImgURL } from "../utils/constants"
 import Error from "./Error"
+import { Link } from "react-router-dom"
 
 const Hero = () => {
-    const { isLoading, error, movies } = useSelector((store) => store.movieReducer)
+    const { isLoading, error, movies } = useSelector( store => store.movieReducer)
 
     const i = Math.floor(Math.random() * 20)
 
-    const movie = movies[i]
+    let movie = movies[i]
 
-    console.log("hero render edildi...")
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
             {isLoading || !movie
@@ -33,7 +33,7 @@ const Hero = () => {
                     </aside>
 
                     <aside className="flex justify-center">
-                        <img className="my-5 banner object-contain rounded max-h-[300px]" src={`${baseImgURL_w500}${movie.backdrop_path}`} alt="poster" />
+                        <img className="my-5 banner object-contain rounded max-h-[300px]" src={baseImgURL + movie.backdrop_path} alt="poster" />
                     </aside>
                     </>)
             }

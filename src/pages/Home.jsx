@@ -9,7 +9,7 @@ import Error from "../components/Error"
 
 const Home = () => {
   const { isLoading, error, genres } = useSelector((store) => store.genreReducer)
-  console.log("genres", genres)
+  
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Home = () => {
     <div>
       <Hero />
       <hr />
-      {
+     { 
         isLoading ? <Loader /> : error ? <Error err={error} /> : (
           genres.map((genre) => <MovieList key={genre.id} genre={genre} />)
         )
