@@ -6,12 +6,12 @@ import Error from "./Error"
 import { Link } from "react-router-dom"
 
 const Hero = () => {
-    const { isLoading, error, movies } = useSelector( store => store.movieReducer)
+    let { isLoading, error, movies } = useSelector( store => store.movieReducer)
 
     const i = Math.floor(Math.random() * 20)
 
     let movie = movies[i]
-
+    
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
             {isLoading || !movie

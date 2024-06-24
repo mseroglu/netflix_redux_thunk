@@ -8,7 +8,7 @@ import Error from "../components/Error"
 
 
 const Home = () => {
-  const { isLoading, error, genres } = useSelector((store) => store.genreReducer)
+  let { isLoading, error, genres } = useSelector((store) => store.genreReducer)
   
   const dispatch = useDispatch()
 
@@ -16,7 +16,6 @@ const Home = () => {
     dispatch(getPopular())
     dispatch(getGenres())
   }, [])
-
 
   return (
     <div>

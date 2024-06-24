@@ -9,6 +9,7 @@
 - millify
 - tailwind
 - splidejs
+- millify
 
 ## API
 * https://developer.themoviedb.org/docs/getting-started
